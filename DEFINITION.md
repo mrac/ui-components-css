@@ -55,8 +55,6 @@ Complex UI-components are composed from simpler UI-components. Web-based UI-comp
 * `JavaScript` is used to implement **behavior** (lifecycle, events, methods) and define **API** used in HTML.
 * `CSS` is used to implement **layout** and **look**.
 
-## Limited responsibility
-
 It's a good practice that UI-components do NOT depend on (and for sure do NOT hardcode) the following:
 
 * REST API  *(there might be many sources of data - it's not a job of UI to assume the source)*
@@ -64,13 +62,13 @@ It's a good practice that UI-components do NOT depend on (and for sure do NOT ha
 * data-processing  *(it's usually not a job of UI and may be decoupled)*
 * data-flow  *(it's application-level logic)*
 
-Just like responsibility of component's JavaScript implementation should be limited, in a similar way CSS-part of responsibility should also be limited.
+Just like responsibility of component's JavaScript implementation should be limited, in a similar way CSS-part of responsibility should also be limited (TBD..)
 
 ## API
 
 The best way of limiting the component's responsibility is to define their API to connect them to functionality, parameters or data provided from outside.
 
-* HTML part of API are **tag name**, **attributes**, **content**
+* HTML part of API are **the tag name**, **attributes**, **the content**
 * JavaScript part of API are **methods**, **properties**, **events**
-* CSS part of API should yet be defined
+* CSS part of API should yet be accomplished (TBD..)
 
