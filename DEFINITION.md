@@ -14,48 +14,49 @@ According to best coding practices UI-components should:
 - hide implementation details
 - have no side-effects
 - be reusable
-- provide a way for customisation/parametrisation
-- allow extension (e.g. through inheritance, composition)
+- provide a way for customisation/parametrisation instead of hardcoding
+- allow extension (e.g. inheritance, composition)
 
 ## Native HTML5 examples:
 
-* input type=number
-* input type=radio
-* input type=date
-* textarea
-* table / tr / td / ..
-* img
-* video
-* audio
+* `input type=number`
+* `input type=radio`
+* `input type=date`
+* `textarea`
+* `table` / `tr` / `td` / ..
+* `img`
+* `video`
+* `audio`
 
 ## Custom examples:
 
-* Dialog
-* Panel / Tab
-* InfiniteScroll
-* Overlay
-* Notification
-* Tooltip
-* DateRangePicker
-* Menu
-* Sticky
-* Carousel
-* Collapse
-* Paginator
-* DragDrop
-* RichTextEditor
-* ImageEditor
-* MultiSelect
+* `Dialog`
+* `Panel` / `Tab`
+* `InfiniteScroll`
+* `Overlay`
+* `Notification`
+* `Tooltip`
+* `DateRangePicker`
+* `Menu`
+* `Sticky`
+* `Carousel`
+* `Collapse`
+* `Paginator`
+* `DragDrop`
+* `RichTextEditor`
+* `ImageEditor`
+* `MultiSelect`
 
 ## Responsibility specified
 
-Complex UI-components are composed from simpler UI-components. Web-based UI-components are implemented in `JavaScript`, `HTML` and `CSS`. Although the boundaries between them are not absolutly strict, they mainly divide their responsibilities into:
+Complex UI-components are composed from simpler UI-components. Web-based UI-components are implemented in `JavaScript`, `HTML` and `CSS`. Although the boundaries between those technologies are not absolutly strict, they mainly divide into:
 
-* `HTML` is mainly used to implement **composition** and **parametrisation**/**data** (tags, attributes, content).
-* `JavaScript` is used to implement **behavior** (lifecycle, events, passing data).
+* `HTML` is mainly used to implement **composition** and pass **parameters** and **data** (tags, attributes, content).
+* `JavaScript` is used to implement **behavior** (lifecycle, events, methods) and define **API** used in HTML.
 * `CSS` is used to implement **layout** and **look**.
 
-## JavaScript responsibility (behavior)
+## Limited responsibility
+
 It's a good practice that UI-components do NOT depend on (and for sure do NOT hardcode) the following:
 
 * REST API  *(there might be many sources of data - it's not a job of UI to assume the source)*
@@ -63,12 +64,13 @@ It's a good practice that UI-components do NOT depend on (and for sure do NOT ha
 * data-processing  *(it's usually not a job of UI and may be decoupled)*
 * data-flow  *(it's application-level logic)*
 
-## CSS responsibility (layout, look)
 Just like responsibility of component's JavaScript implementation should be limited, in a similar way CSS-part of responsibility should also be limited.
 
+## API
 
+The best way of limiting the component's responsibility is to define their API to connect them to functionality, parameters or data provided from outside.
 
-
-
-
+* HTML part of API are **tag name**, **attributes**, **content**
+* JavaScript part of API are **methods**, **properties**, **events**
+* CSS part of API should yet be defined
 
