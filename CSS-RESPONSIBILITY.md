@@ -24,7 +24,7 @@ There can be 2 types of layout CSS:
 - external layout - how the component interracts with siblings and ancestors
 - internal layout - the layout of the children within the component
 
-#### External layout
+### External layout
 
 External layout defines how component is placed inside its parent. It is mainly associated with **root element** of the component.
 
