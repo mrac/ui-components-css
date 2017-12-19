@@ -3,6 +3,8 @@
 It's a **reusable** block of functionality implementing interface between user and application.
 It's a module of UI - **user interface**.
 
+## Responsibility - user interface
+
 The responsibility of UI-component is to:
 - provide an interface for user input
 - display application output to a user
@@ -12,8 +14,11 @@ In a **web document** an UI-component occupies certain space, usually a box, for
 According to best coding practices UI-components should:
 - encapsulate its functionality
 - hide implementation details
-- have no side-effects
+- have limited, singular responsibility
 - be reusable
+- have no side-effects
+- not be affected implicitly
+- have only explicit dependencies
 - provide a way for customisation/parametrisation instead of hardcoding
 - allow extension (e.g. inheritance, composition)
 
