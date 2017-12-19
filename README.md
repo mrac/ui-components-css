@@ -1,4 +1,4 @@
 # ui-components-css
 
-* [UI-component - definition and responsibility](DEFINITION.md)
-
+* [UI-component - definition](DEFINITION.md)
+* [CSS implicity](CSS-IMPLICITY.md)
