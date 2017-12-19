@@ -31,14 +31,14 @@ External layout defines how component is placed inside its parent. It is mainly 
 It may be set entirely IN the parent component, for example:
 
 ```html
-<div class="container">
+<MyForm>
     <MyInput class="my-input-1"></MyInput>
     <MyInput class="my-input-2"></MyInput>
-</div>
+</MyForm>
 ```
 
 ```css
-.container {
+.MyForm {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -50,15 +50,15 @@ It may be set entirely IN the parent component, for example:
 Or may be set in the root element of the component BY the parent component, for example:
 
 ```css
-.container {
+.MyForm {
     display: block;
 }
-.container .my-input-1 {
+.MyForm .my-input-1 {
     display: inline;
     margin: 10px 50px;
     width: 100px;
 }
-.container .my-input-2 {
+.MyForm .my-input-2 {
     display: inline;
     margin: 10px 30px;
     width: 200px;
@@ -68,3 +68,10 @@ Or may be set in the root element of the component BY the parent component, for 
 In both cases however it looks like the component itself is never responsible for setting its own **external layout**. This responsibility is left to its ancestors.
 
 Nevertheless default values may be preset.
+
+```css
+.MyInput {
+    display: block;
+    width: 100%;
+}
+```
