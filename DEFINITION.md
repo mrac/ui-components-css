@@ -67,7 +67,7 @@ It's a good practice that UI-components do NOT depend on (and for sure do NOT ha
 * data-processing  *(it's usually not a job of UI and may be decoupled)*
 * data-flow  *(it's application-level logic)*
 
-Just like responsibility of component's JavaScript implementation should be limited, in a similar way CSS-part of responsibility should also be limited (TBD..)
+Just like responsibility of component's JavaScript implementation should be limited, in a similar way CSS-part of responsibility should also be limited: [CSS-responsibility](CSS-RESPONSIBILITY.md)
 
 ## API
 
@@ -75,5 +75,5 @@ The best way of limiting the component's responsibility is to define their API t
 
 * HTML part of API are **the tag name**, **attributes**, **the content**
 * JavaScript part of API are **methods**, **properties**, **events**
-* CSS part of API should yet be accomplished (TBD..)
+* CSS part of API should yet be accomplished: [CSS-api](CSS-API.md)
 
