@@ -7,7 +7,7 @@ According to best coding practices UI-components should:
 
 When component is not really isolated and may be affected by anything, it prevents scalability. While application grows and becomes more complex, implicit dependencies complicate testing and debugging, make it harder to understand and modify any part of code without introducing bugs elsewhere.
 
-### JavaScript
+### JavaScript/HTML
 
 The problem is fairly well solved within `JavaScript`/`HTML` due to modern component frameworks like React and Angular 2+, where components' state is isolated and may be set only through API (parameters/attributes). In contrast: it was fairly problematic in Angular 1 as `controller scope` was implicitly inherited from the parent `controller scope`.
 
