@@ -40,6 +40,7 @@ It may be set entirely IN the parent component, for example:
 ```css
 .container {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: flex-end;
     padding: 50px 20px;
@@ -50,6 +51,7 @@ Or may be set in the root element of the component BY the parent component, for 
 
 ```css
 .container {
+    display: block;
 }
 .container .my-input-1 {
     display: inline;
@@ -63,6 +65,6 @@ Or may be set in the root element of the component BY the parent component, for 
 }
 ```
 
-In both cases however it looks like the component itself is never responsible to set its own **external layout**. This responsibility is provided to its ancestors.
+In both cases however it looks like the component itself is never responsible for setting its own **external layout**. This responsibility is left to its ancestors.
 
 Nevertheless default values may be preset.
