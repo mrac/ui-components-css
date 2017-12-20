@@ -39,7 +39,7 @@ has `position:absolute` elements but doesn't define a positioning context for th
 
 ### CSS positioning - solution
 
-Fortunately that case seems to be more obvious. A good practice would be to ALWAYS set `position:relative` for component's root element, as default.
+Fortunately that case seems to be more obvious. A good practice would be to ALWAYS set `position:relative` for component's root element, as default (any other value different than default `position:static` would serve the purpose).
 
 Small demo below (uncomment `width: 200px` and see how positioning of some component's internals is based on the context of its parent. Then uncomment `position:relative` to fix that):
 * https://codepen.io/mrac/pen/ypJegJ

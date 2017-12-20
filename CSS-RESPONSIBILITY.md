@@ -26,7 +26,7 @@ There can be 2 types of layout CSS:
 
 ### External layout
 
-External layout defines how component is placed inside its parent. It is mainly associated with **root element** of the component.
+**External layout** defines how component is placed inside its parent. It is mainly associated with **root element** of the component.
 
 It may be set entirely IN the parent component, for example:
 
@@ -65,9 +65,9 @@ Or may be set in the root element of the component BY the parent component, for 
 }
 ```
 
-In both cases however it looks like the component itself is never responsible for setting its own **external layout**. This responsibility is left to its ancestors.
+In both cases however it looks like the component itself should never be responsible for setting its own **external layout**. This responsibility should be left to its ancestors.
 
-Nevertheless default values may be preset.
+Nevertheless default values may be preset:
 
 ```css
 .MyInput {
@@ -75,3 +75,24 @@ Nevertheless default values may be preset.
     width: 100%;
 }
 ```
+
+### Internal layout
+
+**Internal layout** defines how component internal elements are placed within component's own space. Those CSS settings may be set up in the root element of the component and the descendants. The descendants may also be custom components so in another words: it's about setting their external layout CSS.
+
+It's the component's responsibility to set up its own internal layout.
+
+However, component's parent/ancestors may want to overwrite/customise it.
+
+### Display property
+
+`display` property is tricky, because it may set both internal and external layout on the root element of the component, for example:
+
+* `display:flex` - external->`block`, internal->`flex`
+* `display:inline-flex` - external->`inline`, internal->`flex`
+* `display:block` - external->`block`, internal->`block`
+* `display:inline-block` - external->`inline`, internal->`block`
+
+Therefore, whenever component's parent sets its external-layout it may override the default internal-layout setting of the component, which may not be desirable.
+
+
