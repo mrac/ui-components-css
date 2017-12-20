@@ -31,3 +31,16 @@ Small demo (uncomment `all: initial` and see the difference):
 
 Unfortunately no IE/Edge support for that:
 * https://caniuse.com/#feat=css-all
+
+### CSS - default position
+
+Similarly, what may implicitly affect component layout is positioning. If component
+has `position:absolute` elements but doesn't define a positioning context for them (e.g. set `position:relative` somewhere upper in hierarchy), the context will be implicitly defined by the environment where the component is placed in.
+
+Small demo below (uncomment `width: 200px` and see how positioning of some component's internals is based on the context of its parent. Then uncomment `position:relative` to fix that):
+* https://codepen.io/mrac/pen/ypJegJ
+
+Fortunately that case seems to be more obvious. A good practice would be to ALWAYS set `position:relative` in component's root element as default.
+
+Interesting article:
+https://css-tricks.com/what-if-there-was-no-position-static/
