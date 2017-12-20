@@ -99,7 +99,7 @@ Therefore, whenever a component set the external-layout of its children, it may 
 
 For components to be useful in many contexts, it should be possible to set their look according to the application styling-theme.
 
-It answers the questions: *how pretty?*, *how fency?*, *what style?*, *what colors?*
+Look-CSS tries to answer the questions: *how pretty?*, *how fency?*, *what style?*, *what colors?*
 
 Look is usually defined by the following CSS properties:
 - `background`, `background-*`
