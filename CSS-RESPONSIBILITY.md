@@ -118,9 +118,9 @@ In the world of **custom components** this approach needs some adjustments:
 Any element inside any component may be targeted by the parent using a selector which is combined of three dimensions:
 * its component type class
 * its component instance class (optional)
-* the element's semantic class
+* the element semantic class
 
-Looking from the application root component (where application styling theme is set) the selectors may be composed of those 3 dimensions of each element on the path, reflecting the components HTML hierarchy.
+Looking from the application root component (where application styling theme is set) the selector should be composed of all the path down to element, reflecting the components hierarchy.
 
 For example `MyInput` component template in React:
 
@@ -151,10 +151,9 @@ The components look is defined in the application root component `MyApp`:
 
 ```css
 /* MyInput */
-.MyApp .MyInput .MyInput {
+.MyApp .MyInput {
     font-size: 10px;
 }
-
 .MyApp .MyInput .MyInput-clear {
     background-color: lightgrey;
     color: black;
