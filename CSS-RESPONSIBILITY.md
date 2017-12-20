@@ -99,6 +99,24 @@ Therefore, whenever a component set the external-layout of its children, it may 
 
 For components to be useful in many contexts, it should be possible to set their look according to the application styling-theme.
 
+It answers the questions: *how pretty?*, *how fency?*, *what style?*, *what colors?*
+
+Look is usually defined by the following CSS properties:
+- `background`, `background-*`
+- `color`
+- `border`, `border-*`, `outline-*`
+- `box-shadow`
+- `cursor`
+- `font`, `font-*`, `text-*`, `letter-spacing`, `line-height`, `word-*`
+- `list-*`
+- `animation`, `animation-*`, `transition-*`
+- `transform-*`, 
+- `user-select`
+- `opacity`
+- `visibility`
+
+### Components are not responsible for its look
+
 **Native HTML5 elements** keep their own look-CSS minimal, setting only some defaults and leaving this responsibility to higher-level component (usually on the application-level where global CSS classes are defined).
 
 That approach comes with many advantages:
@@ -106,8 +124,6 @@ That approach comes with many advantages:
 - makes possible to switch/modify styling theme, keeping components untouched
 - prevents coupling unrelated components by such trivial thing as styling ;)
 - limits components' responsibility, contributing to code clarity and scalability
-
-### Components are not responsible for its look
 
 In the world of **custom components** this approach needs some adjustments:
 - global CSS classes with visual meaning cannot be hardcoded inside components
