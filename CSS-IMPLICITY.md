@@ -11,7 +11,7 @@ When component is not really isolated and may be affected by anything, it preven
 
 The problem is fairly well solved within `JavaScript`/`HTML` due to modern component frameworks like React and Angular 2+, where components' state is isolated and may be set only through API (parameters/attributes). In contrast: it was fairly problematic in Angular 1 as `controller scope` was implicitly inherited from the parent `controller scope`.
 
-### CSS - problem
+### CSS inheritance - problem
 
 But in `CSS` there is still a problem, due to inheritance:
 * https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance
@@ -19,7 +19,7 @@ But in `CSS` there is still a problem, due to inheritance:
 
 For `inherited properties` whenever CSS property is not set, or set to `inherit`, it will take the value from the parent. Components layout and look may be affected implicitly which is probably not even clearly predicted by component-library developers, let alone for its users.
 
-### CSS - solution
+### CSS inheritance - solution
 
 This **implicity** may be solved in a simple way, thanks to `all` property:
 * https://developer.mozilla.org/en-US/docs/Web/CSS/all
@@ -32,15 +32,17 @@ Small demo (uncomment `all: initial` and see the difference):
 Unfortunately no IE/Edge support for that:
 * https://caniuse.com/#feat=css-all
 
-### CSS - default position
+### CSS positioning - problem
 
 Similarly, what may implicitly affect component layout is positioning. If component
 has `position:absolute` elements but doesn't define a positioning context for them (e.g. set `position:relative` somewhere upper in hierarchy), the context will be implicitly defined by the environment where the component is placed in.
 
+### CSS positioning - solution
+
+Fortunately that case seems to be more obvious. A good practice would be to ALWAYS set `position:relative` for component's root element, as default.
+
 Small demo below (uncomment `width: 200px` and see how positioning of some component's internals is based on the context of its parent. Then uncomment `position:relative` to fix that):
 * https://codepen.io/mrac/pen/ypJegJ
 
-Fortunately that case seems to be more obvious. A good practice would be to ALWAYS set `position:relative` in component's root element as default.
-
-Interesting article:
-https://css-tricks.com/what-if-there-was-no-position-static/
+This will set the positioning context for component's internals. Not only for 2 dimensions (`top`, `bottom`, `left`, `right`) but also 3D positioning, as `z-index` is a number that is interpreted as relative to its stacking context:
+* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
