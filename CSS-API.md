@@ -10,7 +10,7 @@ According to [component responsibility](CSS-RESPONSIBILITY.md), component API sh
 * Private API:
     * Internal layout = external layout of children
 
-## Elements and modifiers
+## Elements and states
 
 Components should provide a way to set up CSS for their root element, internal elements and possible states (modifiers). States or modifiers are variant CSS definitions used conditionally inside a component.
 
