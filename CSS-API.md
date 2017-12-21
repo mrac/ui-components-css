@@ -43,7 +43,7 @@ Any element inside any component may be targeted by the parent using a selector 
 
 For example when setting the external layout of a `Component`:
 ```css
-.Parent {}`
+.Parent {}
 .Parent .Component.componentInstance1 {}
 ```
 
@@ -60,7 +60,7 @@ Looking from the application level, e.g. when setting the look of a `Component`:
 
 Setting the look of a `Parent`:
 ```css
-.App.appTheme1 .Parent .Component.componentInstance1 .childElement1.childStateA {}
+.App.appTheme1 .Parent .Component.componentInstance1 .childState1 {}
 ```
 
 * ([see example](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-their-look))

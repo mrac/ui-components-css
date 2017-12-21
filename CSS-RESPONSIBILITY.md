@@ -240,6 +240,9 @@ ReactDOM.render(<App className="nextgen" />, document.getElementById('root'));
     background-color: lightgrey;
     color: black;
 }
+.MyApp.nextgen .MyInput .MyInput-text_empty {
+    background-color: mistyrose;
+}
 
 /* MyPerson */
 .MyApp.nextgen .MyPerson .MyInput.MyPerson-name {
