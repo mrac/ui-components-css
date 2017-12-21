@@ -97,7 +97,7 @@ Would it be possible to determine which CSS properties set on components's root 
 External layout CSS (root element):
 * `position` ([see](CSS-RESPONSIBILITY.md#position-property))
 * `display` ([see](CSS-RESPONSIBILITY.md#display-property))
-* `width`, `height`, `max-width`, `max-height`, `min-width`, `min-height` ([see](CSS-RESPONSIBILITY.md#box-sizing))
+* `width`, `height` ([see](CSS-RESPONSIBILITY.md#fixed-size))
 * `margin`
 * `flex`, `flex-grow`, `flex-shrink`, `flex-basis`, `order`, `align-self`
 * `left`, `right`, `top`, `bottom`
@@ -117,6 +117,10 @@ External layout CSS (root element):
 * `display:inline-block` - external->`inline`, internal->`block`
 
 Therefore, whenever a component sets the external-layout of its children, it may overwrite their internal-layout settings (`display` property), which may not be desirable.
+
+### Fixed size
+
+It may happen that a component requires a fixed size, or limited size, because otherwise the size would break the internal layout. One solution would be to keep `width`, `height` unrestricted for external-layout, and define `max-width`, `max-height`, `min-width`, `min-height` as internal-layout constraints.
 
 ### Box-sizing
 
