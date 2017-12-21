@@ -103,7 +103,7 @@ Those two cases however seem to be operations of different access:
 - setting external layout (possibly only modifying CSS of the root element) - **"public"**, **safe**
 - overwriting internal layout (modifying CSS of root element and/or internals) - may be marked **"private"**, possibly **unsafe**
 
-It would be nice to decouple those 2 types of access. Would it be possible to determine which CSS properties set on components's root element define external-layout and therefore be **"public"** ? Let's try:
+It would be nice to decouple those 2 types of access. Would it be possible to determine which CSS properties set on components's root element define external-layout and therefore be **"public"** ? Let's try.
 
 External layout CSS (root element):
 * `position` ([see](CSS-RESPONSIBILITY.md#position-property))
@@ -113,6 +113,8 @@ External layout CSS (root element):
 * `flex`, `flex-grow`, `flex-shrink`, `flex-basis`, `order`, `align-self`
 * `left`, `right`, `top`, `bottom`
 * `z-index`
+
+None of those properties are inherited by default, therefore there's no danger of affecting the internal layout ([see W3C CSS 2.1](https://www.w3.org/TR/CSS21/propidx.html)).
 
 #### Position property
 
