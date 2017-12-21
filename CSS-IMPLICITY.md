@@ -1,4 +1,10 @@
-## Component isolation
+# Component isolation
+
+* [JavaScript/HTML](CSS-IMPLICITY.md#javascripthtml)
+* [CSS inheritance](CSS-IMPLICITY.md#css-inheritance)
+    * [CSS inheritance - solution](CSS-IMPLICITY.md#css-inheritance---solution)
+* [CSS positioning](CSS-IMPLICITY.md#css-positioning)
+    * [CSS positioning - solution](CSS-IMPLICITY.md#css-positioning---solution)
 
 According to best coding practices UI-components should:
 - have no side-effects
@@ -7,11 +13,11 @@ According to best coding practices UI-components should:
 
 When component is not really isolated and may be affected by anything, it prevents scalability. While application grows and becomes more complex, implicit dependencies complicate testing and debugging, make it harder to understand and modify any part of code without introducing bugs elsewhere.
 
-### JavaScript/HTML
+## JavaScript/HTML
 
 The problem is fairly well solved within `JavaScript`/`HTML` due to modern component frameworks like React and Angular 2+, where components' state is isolated and may be set only through API (parameters/attributes). In contrast: it was fairly problematic in Angular 1 as `controller scope` was implicitly inherited from the parent `controller scope`.
 
-### CSS inheritance - problem
+## CSS inheritance
 
 But in `CSS` there is still a problem, due to inheritance:
 * https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance
@@ -33,7 +39,7 @@ Small demo (uncomment `all: initial` and see the difference):
 Unfortunately no IE/Edge support for that:
 * https://caniuse.com/#feat=css-all
 
-### CSS positioning - problem
+## CSS positioning
 
 Similarly, what may implicitly affect component layout is positioning. If component
 has `position:absolute` elements but doesn't define a positioning context for them (e.g. set `position:relative` somewhere upper in hierarchy), the context will be implicitly defined by the environment where the component is placed in.
