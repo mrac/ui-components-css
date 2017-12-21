@@ -49,18 +49,18 @@ For example when setting the external layout of a `Component`:
 
 For example when customising the internal layout of a `Component`:
 ```css
-.Parent .componentInstance1.Component .childElement1 {}
-.Parent .componentInstance1.Component .childElement2 {}
+.Parent .componentInstance1.Component .element1 {}
+.Parent .componentInstance1.Component .element2 {}
 ```
 
 Looking from the application level, e.g. when setting the look of a `Component`:
 ```css
-.App.appTheme1 .Component .childElement1 {}
+.App.appTheme1 .Component .element1 {}
 ```
 
 Setting the look of a `Parent`:
 ```css
-.App.appTheme1 .Parent .componentInstance1.Component .childState1 {}
+.App.appTheme1 .Parent .componentInstance1.Component .state1 {}
 ```
 
 * ([see example](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-their-look))
