@@ -60,6 +60,9 @@ Looking from the application level, e.g. when setting the look of a `Component`:
 
 Setting the look of a `Parent`:
 ```css
+.App.appTheme1 .Parent {}
+.App.appTheme1 .Parent .componentInstance1.Component {}
+.App.appTheme1 .Parent .componentInstance1.Component_state1 {}
 .App.appTheme1 .Parent .componentInstance1.Component .Component-element1_state1 {}
 ```
 
