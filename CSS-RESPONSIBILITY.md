@@ -117,7 +117,7 @@ Look is usually defined by the following CSS properties:
 
 ### Components are not responsible for its look
 
-**Native HTML5 elements** keep their own look-CSS minimal, setting only some defaults and leaving this responsibility to higher-level component (usually on the application-level where global CSS classes are defined).
+**Native HTML5 elements** keep their own look-CSS minimal, setting only some defaults and leaving this responsibility to higher-level component (usually on the application-level).
 
 That approach comes with many advantages:
 - makes components highly reusable in applications with different styling-themes
@@ -125,20 +125,7 @@ That approach comes with many advantages:
 - prevents coupling unrelated components by such trivial thing as styling ;)
 - limits components' responsibility, contributing to code clarity and scalability
 
-In the world of **custom components** this approach needs some adjustments:
-- global CSS classes with visual meaning cannot be hardcoded inside components
-- components may use semantic CSS classes reflecting elements functionality
-- there should be a way to namespace semantic CSS classes to prevent name conflicts
-- semantic CSS classes can be targeted by selectors on **appliation level**, to set their look according to **application styling theme**
-
-Any element inside any component may be targeted by the parent using a selector which is combined of three dimensions:
-* its component type class
-* its component instance class (optional)
-* the element semantic class
-
-Looking from the application root component (where application styling theme is set) the selector should be composed of all the path down to element, reflecting the components hierarchy.
-
-For example `MyInput` component template in React:
+For example `MyInput` component (template in React):
 
 ```html
 <div className={'MyInput '+ this.props.className}>
@@ -157,7 +144,7 @@ would be used in the parent component `MyPerson`:
 </div>
 ```
 
-The components look is defined in the application root component `MyApp`:
+The component's look (as part of styling theme) is defined in the application root component `MyApp`:
 
 ```html
 <div className={'MyApp'}>
