@@ -28,7 +28,7 @@ According to best coding practices UI-components should:
 - provide a way for customisation/parametrisation instead of hardcoding
 - allow extension (e.g. inheritance, composition)
 
-Most of those good-parts are achieveble for `JavaScript`/`HTML`. Regarding `CSS` some of them are still rarely addressed (see: [component isolation](CSS-IMPLICITY.md)).
+Most of those good-parts are achieveble for `JavaScript`/`HTML`. Regarding `CSS` some of them are still rarely addressed (see: [CSS-implicity](CSS-IMPLICITY.md)).
 
 ## Native HTML5 examples:
 
@@ -83,5 +83,5 @@ The best way of limiting the component's responsibility is to define their API t
 
 * HTML part of API are **the tag name**, **attributes**, **the content**
 * JavaScript part of API are **methods**, **properties**, **events**
-* CSS part of API should yet be accomplished (see: [CSS-api](CSS-API.md)).
+* CSS part of API should yet be accomplished (see: [CSS-API](CSS-API.md)).
 
