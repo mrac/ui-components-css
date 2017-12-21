@@ -37,20 +37,20 @@ There are other solutions that do better job here, like e.g. [CSS modules](https
 ## Selectors
 
 Any element inside any component may be targeted by the parent using a selector which is combined of a few dimensions:
-* its component instance CSS class (optional)
-* its component type CSS class
-* its element/state CSS class
+* its component instance CSS class (optional, e.g. `Parent-element1`)
+* its component type CSS class (e.g. `Component`)
+* its element/state CSS class (e.g. `Component-element1` or `Component_state1` or `Component-element1_state1`)
 
 For example when setting the external layout of a `Component`:
 ```css
 .Parent {}
-.Parent .componentInstance1.Component {}
+.Parent .Parent-element1.Component {}
 ```
 
 For example when customising the internal layout of a `Component`:
 ```css
-.Parent .componentInstance1.Component .Component-element1 {}
-.Parent .componentInstance1.Component .Component-element2 {}
+.Parent .Parent-element1.Component .Component-element1 {}
+.Parent .Parent-element1.Component .Component-element2 {}
 ```
 
 Looking from the application level, e.g. when setting the look of a `Component`:
@@ -61,9 +61,9 @@ Looking from the application level, e.g. when setting the look of a `Component`:
 Setting the look of a `Parent`:
 ```css
 .App.appTheme1 .Parent {}
-.App.appTheme1 .Parent .componentInstance1.Component {}
-.App.appTheme1 .Parent .componentInstance1.Component_state1 {}
-.App.appTheme1 .Parent .componentInstance1.Component .Component-element1_state1 {}
+.App.appTheme1 .Parent .Parent-element1.Component {}
+.App.appTheme1 .Parent .Parent-element1.Component_state1 {}
+.App.appTheme1 .Parent .Parent-element1.Component .Component-element1_state1 {}
 ```
 
 * ([see example](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-their-look))
