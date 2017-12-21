@@ -41,18 +41,29 @@ Any element inside any component may be targeted by the parent using a selector 
 * its component instance CSS class (optional)
 * its element/state CSS class
 
-For example:
-* `.Parent .Component.componentInstance .childElement {}`
+For example when setting the external layout of a `Component`:
+```css
+.Parent {}`
+.Parent .Component.componentInstance1 {}
+```
 
-Looking from the application level (e.g. in case of setting the component look):
+For example when customising the internal layout of a `Component`:
+```css
+.Parent .Component.componentInstance1 .childElement1 {}
+.Parent .Component.componentInstance1 .childElement2 {}
+```
 
-Setting the look of `Component`:
-* `.App.appTheme .Component .childElement {}`
+Looking from the application level, e.g. when setting the look of a `Component`:
+```css
+.App.appTheme1 .Component .childElement1 {}
+```
 
-Setting the look of `Parent`:
-* `.App.appTheme .Parent .Component.componentInstance .childElement.childState {}`
+Setting the look of a `Parent`:
+```css
+.App.appTheme1 .Parent .Component.componentInstance1 .childElement1.childStateA {}
+```
 
-([see example](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-their-look))
+* ([see example](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-their-look))
 
 
 ## Semantic versioning
