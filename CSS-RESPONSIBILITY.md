@@ -12,7 +12,6 @@
         * [Box sizing](CSS-RESPONSIBILITY.md#box-sizing)
 * [Look](CSS-RESPONSIBILITY.md#look)
     * [Components are not responsible for their look](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-its-look)
-    * []
 
 ## Layout
 
