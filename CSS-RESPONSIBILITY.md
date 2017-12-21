@@ -245,7 +245,7 @@ ReactDOM.render(<App className="nextgen" />, document.getElementById('root'));
 }
 
 /* MyPerson */
-.MyApp.nextgen .MyPerson .MyInput.MyPerson-name {
+.MyApp.nextgen .MyPerson .MyPerson-name.MyInput {
     font-size: 15px;
 }
 ```

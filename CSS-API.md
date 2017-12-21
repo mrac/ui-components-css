@@ -36,21 +36,21 @@ There are other solutions that do better job here, like e.g. [CSS modules](https
 
 ## Selectors
 
-Any element inside any component may be targeted by the parent using a selector which is combined of three dimensions:
-* its component type CSS class
+Any element inside any component may be targeted by the parent using a selector which is combined of a few dimensions:
 * its component instance CSS class (optional)
+* its component type CSS class
 * its element/state CSS class
 
 For example when setting the external layout of a `Component`:
 ```css
 .Parent {}
-.Parent .Component.componentInstance1 {}
+.Parent .componentInstance1.Component {}
 ```
 
 For example when customising the internal layout of a `Component`:
 ```css
-.Parent .Component.componentInstance1 .childElement1 {}
-.Parent .Component.componentInstance1 .childElement2 {}
+.Parent .componentInstance1.Component .childElement1 {}
+.Parent .componentInstance1.Component .childElement2 {}
 ```
 
 Looking from the application level, e.g. when setting the look of a `Component`:
@@ -60,7 +60,7 @@ Looking from the application level, e.g. when setting the look of a `Component`:
 
 Setting the look of a `Parent`:
 ```css
-.App.appTheme1 .Parent .Component.componentInstance1 .childState1 {}
+.App.appTheme1 .Parent .componentInstance1.Component .childState1 {}
 ```
 
 * ([see example](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-their-look))
