@@ -125,7 +125,9 @@ That approach comes with many advantages:
 - prevents coupling unrelated components by such trivial thing as styling ;)
 - limits components' responsibility, contributing to code clarity and scalability
 
-For example `MyInput` component (template in React):
+Let's see how it would look like for custom components.
+
+Here's an example of `MyInput` component (template in React) with minimal CSS:
 
 ```html
 <div className={'MyInput '+ this.props.className}>
@@ -145,7 +147,7 @@ For example `MyInput` component (template in React):
 .MyInput-clear {}
 ```
 
-would be used in the parent component `MyPerson`:
+It would be used in the parent component `MyPerson`:
 
 ```html
 <div className={'MyPerson ' + this.props.className}>
@@ -163,10 +165,11 @@ would be used in the parent component `MyPerson`:
 .MyPerson-address {}
 ```
 
-The component's look (as part of styling theme) is defined in the application root component `MyApp`:
+The components' look (as part of styling theme) is defined in the application root component `MyApp`:
 
 ```html
 <div className={'MyApp'}>
+    <h1>Enter your name and address</h1>
     <MyPerson>
 </div>
 ```
