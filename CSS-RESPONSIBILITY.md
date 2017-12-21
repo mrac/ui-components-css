@@ -211,34 +211,38 @@ It would be used in the parent component `MyPerson`:
 .MyPerson-address {}
 ```
 
-The components' look (as part of styling theme) is defined in the application root component `MyApp`:
+The components' look (as part of styling theme `nextgen`) is defined in the application root component `MyApp`:
 
 ```html
-<div className={'MyApp'}>
+<div className={'MyApp ' + this.props.className}>
     <h1>Enter your name and address</h1>
     <MyPerson>
 </div>
 ```
 
+```js
+ReactDOM.render(<App className="nextgen" />, document.getElementById('root'));
+```
+
 ```css
 /* MyApp */
-.MyApp {
+.MyApp.nextgen {
     all: initial;
     position: relative;
     box-sizing: border-box;
 }
 
 /* MyInput */
-.MyApp .MyInput {
+.MyApp.nextgen .MyInput {
     font-size: 10px;
 }
-.MyApp .MyInput .MyInput-clear {
+.MyApp.nextgen .MyInput .MyInput-clear {
     background-color: lightgrey;
     color: black;
 }
 
 /* MyPerson */
-.MyApp .MyPerson .MyInput.MyPerson-name {
+.MyApp.nextgen .MyPerson .MyInput.MyPerson-name {
     font-size: 15px;
 }
 ```
