@@ -15,7 +15,7 @@ Layout is usually defined by the following CSS properties:
 - `flex-*`, `align-*`, `order`, `justify-content`
 - `float`, `clear`
 - `left`, `right`, `top`, `bottom`
-- `margin`, `border`
+- `margin`, `border`, `padding`
 - `width`, `height`, `max-width`, `max-height`, `min-width`, `min-height`
 - `box-sizing`
 - `z-index`
@@ -84,16 +84,43 @@ It is the responsibility of the component to set up its own internal layout.
 
 However, component's parent/ancestors may want to overwrite/customise it.
 
+### Setting vs customization
+
+Summarizing: components are responsible for setting its internal layout, but not external. In terms of API they have to provide a way to set the external layout, but it would be also very convenient if they provide a way to customise/overwrite their internal layout.
+
+Those two cases however seem to be operations of different access:
+- setting external layout (possibly only modifying CSS of the root element) - **"public"**, **safe**
+- overwriting internal layout (modifying CSS of root element and/or internals) - may be marked **"private"**, possibly **unsafe**
+
+Would it be possible to determine which CSS properties set on components's root element define external layout and therefore be **"public"** ?
+
+External layout CSS (root element):
+* `position`
+* `display`
+* `flex`, `flex-grow`, `flex-shring`, `flex-basis`, `order`, `align-self`
+* `left`, `right`, `top`, `bottom`
+* `margin`
+* `width`, `height`, `max-width`, `max-height`, `min-width`, `min-height`
+* `z-index`
+
+### Position property
+
+`position` is associated with external-layout, although using `position:static` may affect internal-layout in a great way, whenever internal elements need a context for positioning. Let's consider `position:static` harmful for a component root and avoid it alltogether.
+
 ### Display property
 
-`display` property is tricky, because it may be used to set both internal and external layout on the root element of the component, for example:
+`display` property is tricky, because it may define both internal and external layout of the same component, both set on its root element, for example:
 
 * `display:flex` - external->`block`, internal->`flex`
 * `display:inline-flex` - external->`inline`, internal->`flex`
 * `display:block` - external->`block`, internal->`block`
 * `display:inline-block` - external->`inline`, internal->`block`
 
-Therefore, whenever a component set the external-layout of its children, it may overwrite their internal-layout settings (`display` property), which may not be desirable.
+Therefore, whenever a component sets the external-layout of its children, it may overwrite their internal-layout settings (`display` property), which may not be desirable.
+
+### Box-sizing
+
+With `box-sizing:content-box` which is default, it's impossible to decouple `width`/`height` which define external-layout and `padding`/`border` which are more associated with internal-layout. It would be a good practice to always use `box-sizing:border-box`.
 
 ### Look
 
@@ -141,6 +168,7 @@ Here's an example of `MyInput` component (template in React) with minimal CSS:
 .MyInput {
     all: initial;
     position: relative;
+    box-sizing: border-box;
 }
 .MyInput-label {}
 .MyInput-text {}
@@ -160,6 +188,7 @@ It would be used in the parent component `MyPerson`:
 .MyPerson {
     all: initial;
     position: relative;
+    box-sizing: border-box;
 }
 .MyPerson-name {}
 .MyPerson-address {}
@@ -175,6 +204,13 @@ The components' look (as part of styling theme) is defined in the application ro
 ```
 
 ```css
+/* MyApp */
+.MyApp {
+    all: initial;
+    position: relative;
+    box-sizing: border-box;
+}
+
 /* MyInput */
 .MyApp .MyInput {
     font-size: 10px;

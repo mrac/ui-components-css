@@ -16,6 +16,7 @@ The problem is fairly well solved within `JavaScript`/`HTML` due to modern compo
 But in `CSS` there is still a problem, due to inheritance:
 * https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance
 * https://developer.mozilla.org/en-US/docs/Web/CSS/inherit
+* https://www.w3.org/TR/CSS21/propidx.html
 
 For `inherited properties` whenever CSS property is not set, or set to `inherit`, it will take the value from the parent. Components layout and look may be affected implicitly which is probably not even clearly predicted by component-library developers, let alone for its users.
 
