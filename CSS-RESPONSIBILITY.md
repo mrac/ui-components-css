@@ -1,8 +1,20 @@
-## Component responsibility
+# Component responsibility
 
 `CSS` is used to set components' **layout** and **look**.
 
-### Layout
+* [Layout](CSS-RESPONSIBILITY.md#layout)
+    * [External layout](CSS-RESPONSIBILITY.md#external-layout)
+    * [Internal layout](CSS-RESPONSIBILITY.md#internal-layout)
+    * [Setting vs customization](CSS-RESPONSIBILITY.md#setting-vs-customization)
+        * [Position property](CSS-RESPONSIBILITY.md#position-property)
+        * [Display property](CSS-RESPONSIBILITY.md#display-property)
+        * [Fixed size](CSS-RESPONSIBILITY.md#fixed-size)
+        * [Box sizing](CSS-RESPONSIBILITY.md#box-sizing)
+* [Look](CSS-RESPONSIBILITY.md#look)
+    * [Components are not responsible for their look](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-its-look)
+    * []
+
+## Layout
 
 Layout is about setting the compoment's place in a web document. In old days before `CSS` has become mature technology, it was mainly accomplished by `HTML` markup (`width`, `height` attributes, excesive usage of `table` element, order of tags).
 
@@ -97,17 +109,17 @@ Would it be possible to determine which CSS properties set on components's root 
 External layout CSS (root element):
 * `position` ([see](CSS-RESPONSIBILITY.md#position-property))
 * `display` ([see](CSS-RESPONSIBILITY.md#display-property))
-* `width`, `height` ([see](CSS-RESPONSIBILITY.md#fixed-size))
+* `width`, `height` ([see 1](CSS-RESPONSIBILITY.md#fixed-size), [see 2](CSS-RESPONSIBILITY.md#box-sizing))
 * `margin`
 * `flex`, `flex-grow`, `flex-shrink`, `flex-basis`, `order`, `align-self`
 * `left`, `right`, `top`, `bottom`
 * `z-index`
 
-### Position property
+#### Position property
 
 `position` is associated with external-layout, although using `position:static` may affect internal-layout in a great way, whenever internal elements need a context for `absolute` positioning. Let's consider `position:static` harmful for a component root and avoid it alltogether ([see](CSS-IMPLICITY.md#css-positioning---problem)).
 
-### Display property
+#### Display property
 
 `display` property is tricky, because it may define both internal and external layout of the same component, both set on its root element, for example:
 
@@ -118,15 +130,15 @@ External layout CSS (root element):
 
 Therefore, whenever a component sets the external-layout of its children, it may overwrite their internal-layout settings (`display` property), which may not be desirable.
 
-### Fixed size
+#### Fixed size
 
-It may happen that a component requires a fixed size, or limited size, because otherwise the size would break the internal layout. One solution would be to keep `width`, `height` unrestricted for external-layout, and define `max-width`, `max-height`, `min-width`, `min-height` as internal-layout constraints.
+It may happen that a component requires a fixed size, or limited size, because otherwise size setting could break the internal layout. One solution would be to keep `width`, `height` unrestricted for external-layout, and define `max-width`, `max-height`, `min-width`, `min-height` as internal-layout constraints.
 
-### Box-sizing
+#### Box-sizing
 
 With `box-sizing:content-box` which is default, it's impossible to decouple `width`/`height` which define external-layout and `padding`/`border` which are more associated with internal-layout. It would be a good practice to always use `box-sizing:border-box`.
 
-### Look
+## Look
 
 For components to be useful in many contexts, it should be possible to set their look according to the application styling-theme.
 
@@ -146,7 +158,7 @@ Look is usually defined by the following CSS properties:
 - `opacity`
 - `visibility`
 
-### Components are not responsible for its look
+### Components are not responsible for their look
 
 **Native HTML5 elements** keep their own look-CSS minimal, setting only some defaults and leaving this responsibility to higher-level component (usually on the application-level).
 
