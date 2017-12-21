@@ -135,6 +135,16 @@ For example `MyInput` component (template in React):
 </div>
 ```
 
+```css
+.MyInput {
+    all: initial;
+    position: relative;
+}
+.MyInput-label {}
+.MyInput-text {}
+.MyInput-clear {}
+```
+
 would be used in the parent component `MyPerson`:
 
 ```html
@@ -142,6 +152,15 @@ would be used in the parent component `MyPerson`:
     <MyInput className="MyPerson-name" label="Name" />
     <MyInput className="MyPerson-address" label="Address" />
 </div>
+```
+
+```css
+.MyPerson {
+    all: initial;
+    position: relative;
+}
+.MyPerson-name {}
+.MyPerson-address {}
 ```
 
 The component's look (as part of styling theme) is defined in the application root component `MyApp`:
