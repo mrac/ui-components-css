@@ -1,7 +1,13 @@
-## What is UI-component?
+# What is UI-component?
 
 It's a **reusable** block of functionality implementing interface between user and application.
 It's a module of UI - **user interface**.
+
+* [Responsibility - user interface](DEFINITION.md#responsibility---user-interface)
+* [Native HTML5 examples](DEFINITION.md#native-html5-examples)
+* [Custom examples](DEFINITION.md#custom-examples)
+* [Responsibility specified](DEFINITION.md#responsibility-specified)
+* [API](DEFINITION.md#api)
 
 ## Responsibility - user interface
 
