@@ -1,6 +1,6 @@
 ## Component responsibility
 
-`CSS` is used to set components' layout and look.
+`CSS` is used to set components' **layout** and **look**.
 
 ### Layout
 
@@ -95,17 +95,17 @@ Those two cases however seem to be operations of different access:
 Would it be possible to determine which CSS properties set on components's root element define external layout and therefore be **"public"** ?
 
 External layout CSS (root element):
-* `position`
-* `display`
-* `flex`, `flex-grow`, `flex-shring`, `flex-basis`, `order`, `align-self`
-* `left`, `right`, `top`, `bottom`
+* `position` ([see](CSS-RESPONSIBILITY.md#position-property))
+* `display` ([see](CSS-RESPONSIBILITY.md#display-property))
+* `width`, `height`, `max-width`, `max-height`, `min-width`, `min-height` ([see](CSS-RESPONSIBILITY.md#box-sizing))
 * `margin`
-* `width`, `height`, `max-width`, `max-height`, `min-width`, `min-height`
+* `flex`, `flex-grow`, `flex-shrink`, `flex-basis`, `order`, `align-self`
+* `left`, `right`, `top`, `bottom`
 * `z-index`
 
 ### Position property
 
-`position` is associated with external-layout, although using `position:static` may affect internal-layout in a great way, whenever internal elements need a context for positioning. Let's consider `position:static` harmful for a component root and avoid it alltogether.
+`position` is associated with external-layout, although using `position:static` may affect internal-layout in a great way, whenever internal elements need a context for `absolute` positioning. Let's consider `position:static` harmful for a component root and avoid it alltogether ([see](CSS-IMPLICITY.md#css-positioning---problem)).
 
 ### Display property
 
