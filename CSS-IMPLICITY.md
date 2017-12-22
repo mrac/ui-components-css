@@ -33,6 +33,16 @@ This **implicity** may be solved in a simple way, thanks to `all` property:
 
 Setting `all: initial` in component root element reset all properties to its initial values and prevent CSS inheritance. Then the only way to set the component CSS is to target the component's selector in its parent/ancestor and explicitly set CSS. It's yet far from having the [CSS API](CSS-API.md) but very helpful already with isolation is place.
 
+We should be conscious though, because value `initial` sets a property value into the default value specified for `CSS` property, not to the default value for `CSS` property for a given `HTML` tag. For example:
+```css
+div {
+    display: initial;
+}
+```
+will set computed value `display` to `inline` for all `div` tags.
+
+As it may not be clearly expected, it would make sense to always set `display` property explicitly in the root element.
+
 Small demo (uncomment `all: initial` and see the difference):
 * https://codepen.io/anon/pen/WXLLLg
 
