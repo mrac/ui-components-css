@@ -28,11 +28,11 @@ Layout is usually defined by the following CSS properties:
 - `flex-*`, `align-*`, `order`, `justify-content`
 - `float`, `clear`
 - `left`, `right`, `top`, `bottom`
-- `margin`, `border`, `padding`
+- `margin`, `margin-*`, `border`, `border-*`, `padding`, `padding-*`
 - `width`, `height`, `max-width`, `max-height`, `min-width`, `min-height`
 - `box-sizing`
 - `z-index`
-* `overflow`, `overflow-*`
+- `overflow`, `overflow-*`
 
 There can be 2 types of layout CSS:
 - external layout - how the component interracts with siblings and ancestors
@@ -114,7 +114,7 @@ External layout CSS (only the root element):
 * `position` ([see](CSS-RESPONSIBILITY.md#position-property))
 * `display` ([see](CSS-RESPONSIBILITY.md#display-property))
 * `width`, `height` ([see 1](CSS-RESPONSIBILITY.md#fixed-size), [see 2](CSS-RESPONSIBILITY.md#box-sizing))
-* `margin`
+* `margin`, `margin-*`
 * `flex`, `flex-grow`, `flex-shrink`, `flex-basis`, `order`, `align-self`
 * `left`, `right`, `top`, `bottom`
 * `z-index`
@@ -151,7 +151,7 @@ Internal-layout `CSS` would include:
 - the following `CSS` properties defined for the root element:
     - `display` ([see](CSS-RESPONSIBILITY.md#display-property))
     - `flex-direction`, `flex-wrap`, `flex-flow`, `justify-content`, `align-items`, `align-content`
-    - `border`, `padding`
+    - `border`, `padding`, `border-*`, `padding-*`
     - `max-width`, `max-height`, `min-width`, `min-height`
     - `box-sizing`
     - `float`, `clear`
@@ -161,18 +161,18 @@ Internal-layout `CSS` would include:
 
 For components to be useful in many contexts, it should be possible to set their look according to the application styling-theme.
 
-Look-CSS tries to answer the questions: *how pretty?*, *how fency?*, *what style?*, *what colors?*
+Look-CSS tries to answer the questions: *how pretty?*, *what style?*, *what colors?*
 
 Look is usually defined by the following CSS properties:
 - `background`, `background-*`
 - `color`
-- `border`, `border-*`, `outline-*`
+- `outline`, `outline-*`
 - `box-shadow`
 - `cursor`
 - `font`, `font-*`, `text-*`, `letter-spacing`, `line-height`, `word-*`
 - `list-*`
 - `animation`, `animation-*`, `transition-*`
-- `transform-*`, 
+- `transform`, `transform-*`
 - `user-select`
 - `opacity`
 - `visibility`
