@@ -5,6 +5,7 @@
     * [CSS inheritance - solution](CSS-IMPLICITY.md#css-inheritance---solution)
 * [CSS positioning](CSS-IMPLICITY.md#css-positioning)
     * [CSS positioning - solution](CSS-IMPLICITY.md#css-positioning---solution)
+* [Basic setup](CSS-IMPLICITY.md#basic-setup)
 
 According to best coding practices UI-components should:
 - have no side-effects
@@ -41,7 +42,7 @@ div {
 ```
 will set computed value `display` to `inline` for all `div` tags.
 
-As it may not be clearly expected, it would make sense to always set `display` property explicitly in the root element.
+As it may not be clearly expected, it would make sense to always set `display` property explicitly in the root element:
 
 Small demo (uncomment `all: initial` and see the difference):
 * https://codepen.io/anon/pen/WXLLLg
@@ -63,3 +64,15 @@ Small demo below (uncomment `width: 200px` and see how positioning of some compo
 
 This will set the positioning context for component's internals. Not only for 2 dimensions (`top`, `bottom`, `left`, `right`) but also 3D positioning, as `z-index` is a number that is interpreted as relative to its stacking context:
 * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+
+Example of basic setup:
+
+## Basic setup
+
+```css
+.Component {
+    all: initial;
+    display: block;
+    position: relative;
+}
+```
