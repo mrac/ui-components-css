@@ -119,10 +119,11 @@ also whenever `HTML` template has been MODIFIED causing implicit changes in look
 
 > For example: changing `HTML` template from:
 > * `<a class="Component-submit">OK</a>`
+>
 > to:
 > * `<button class="Component-submit">OK</button>`
 > 
-> without any `CSS` precautions or adjustments, will change `color` property value for `Component-sumbit` from `inherit` to `black`).
+> without any `CSS` precautions or adjustments, will change `color` property value for `Component-submit` element from `inherit` to `black`.
 
 ### Minor version
 
