@@ -133,6 +133,8 @@ None of those properties are inherited by default, therefore there's no danger o
 * `display:inline-flex` - external->`inline`, internal->`flex`
 * `display:block` - external->`block`, internal->`block`
 * `display:inline-block` - external->`inline`, internal->`block`
+* `display:table` - external->`block`, internal->`table`
+* `display:inline-table` - external->`inline`, internal->`table`
 
 Therefore, whenever a component sets the external-layout of its children, it may overwrite their internal-layout settings (`display` property), which may not be desirable.
 
@@ -202,6 +204,7 @@ Here's an example of `MyInput` component (template in React) with minimal CSS:
 ```css
 .MyInput {
     all: initial;
+    display: block;
     position: relative;
     box-sizing: border-box;
 }
@@ -222,6 +225,7 @@ It would be used in the parent component `MyPerson`:
 ```css
 .MyPerson {
     all: initial;
+    display: block;
     position: relative;
     box-sizing: border-box;
 }
@@ -246,6 +250,7 @@ ReactDOM.render(<App className="nextgen" />, document.getElementById('root'));
 /* MyApp */
 .MyApp.nextgen {
     all: initial;
+    display: block;
     position: relative;
     box-sizing: border-box;
 }
