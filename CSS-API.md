@@ -115,7 +115,14 @@ also whenever any of the following `CSS` properties has been MODIFIED, REMOVED o
 - look CSS default properties
 - external-layout CSS default properties
 
-also whenever `HTML` template has been MODIFIED causing implicit changes in look-CSS default properties (for example: just switching from `a` tag to `button` tag, without any `CSS` precautions or adjustments, will change `color` property value for that element from `inherit` to `black`).
+also whenever `HTML` template has been MODIFIED causing implicit changes in look-CSS default properties.
+
+> For example: changing `HTML` template from:
+> * `<a class="Component-submit">OK</a>`
+> to:
+> * `<button class="Component-submit">OK</button>`
+> 
+> without any `CSS` precautions or adjustments, will change `color` property value for `Component-sumbit` from `inherit` to `black`).
 
 ### Minor version
 
