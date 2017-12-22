@@ -5,7 +5,6 @@
     * [CSS inheritance - solution](CSS-IMPLICITY.md#css-inheritance---solution)
 * [CSS positioning](CSS-IMPLICITY.md#css-positioning)
     * [CSS positioning - solution](CSS-IMPLICITY.md#css-positioning---solution)
-* [Basic setup](CSS-IMPLICITY.md#basic-setup)
 
 According to best coding practices UI-components should:
 - have no side-effects
@@ -64,15 +63,3 @@ Small demo below (uncomment `width: 200px` and see how positioning of some compo
 
 This will set the positioning context for component's internals. Not only for 2 dimensions (`top`, `bottom`, `left`, `right`) but also 3D positioning, as `z-index` is a number that is interpreted as relative to its stacking context:
 * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
-
-## Basic setup
-
-Example of basic setup for the component's root element:
-
-```css
-.Component {
-    all: initial;
-    display: block;
-    position: relative;
-}
-```
