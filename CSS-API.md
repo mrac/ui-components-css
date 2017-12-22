@@ -92,7 +92,7 @@ According to [component responsibility](CSS-RESPONSIBILITY.md), component API sh
 
 * &#x1F4D7; **Look** `CSS` properties on all elements - can be set safely by all ancestors ([list](CSS-RESPONSIBILITY.md#look))
 * &#x1F4D9; **External-layout** `CSS` properties on the root element - can be set safely by the component's parent ([list](CSS-RESPONSIBILITY.md#external-layout-properties))
-* &#x1F4D5; **Internal-layout** `CSS` properties can be only set safaly by component itself - on the root element ([list](CSS-RESPONSIBILITY.md#internal-layout-properties)) and all children elements ([list](CSS-RESPONSIBILITY.md#layout))
+* &#x1F4D5; **Internal-layout** `CSS` properties can be only set safely by component itself - on the root element ([list](CSS-RESPONSIBILITY.md#internal-layout-properties)) and all children elements ([list](CSS-RESPONSIBILITY.md#layout))
 * `display` property is an exception and may have different access rights (&#x1F4D5; or &#x1F4D9;), based on its value ([see](CSS-RESPONSIBILITY.md#display-property)) compared to default value in the component's root
 
 ## Semantic versioning
@@ -115,6 +115,8 @@ also whenever any of the following `CSS` properties has been MODIFIED, REMOVED o
 - look CSS default properties
 - external-layout CSS default properties
 
+also whenever `HTML` template has been MODIFIED causing implicit changes in look-CSS default properties (for example: just switching from `a` tag to `button` tag without any `CSS` adjustments will change `color` property value for that element from `inherit` to `black`).
+
 ### Minor version
 
 MINOR version should be considered, whenever any of the following `CSS` part has been ADDED:
@@ -127,7 +129,7 @@ also whenever any of the following `CSS` properties has been MODIFIED, REMOVED o
 
 ### Patch version
 
-PATCH version should be considered for all other cases, which may happen where `CSS` properties has been MODIFIED, REMOVED or ADDED for the purpose of bug-fixing the existing features:
+PATCH version should be considered for all other cases, which may happen whenever `CSS` properties has been MODIFIED, REMOVED or ADDED for the purpose of bug-fixing the existing features:
 - internal-layout CSS properties
 
 
