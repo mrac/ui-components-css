@@ -115,7 +115,7 @@ also whenever any of the following `CSS` properties has been MODIFIED, REMOVED o
 - look CSS default properties
 - external-layout CSS default properties
 
-also whenever `HTML` template has been MODIFIED causing implicit changes in look-CSS default properties (for example: just switching from `a` tag to `button` tag without any `CSS` adjustments will change `color` property value for that element from `inherit` to `black`).
+also whenever `HTML` template has been MODIFIED causing implicit changes in look-CSS default properties (for example: just switching from `a` tag to `button` tag, without any `CSS` precautions or adjustments, will change `color` property value for that element from `inherit` to `black`).
 
 ### Minor version
 
