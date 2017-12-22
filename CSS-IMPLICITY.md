@@ -34,7 +34,7 @@ This **implicity** may be solved in a simple way, thanks to `all` property:
 
 Setting `all: initial` in component root element reset all properties to its initial values and prevent CSS inheritance. Then the only way to set the component CSS is to target the component's selector in its parent/ancestor and explicitly set CSS. It's yet far from having the [CSS API](CSS-API.md) but very helpful already with isolation is place.
 
-We should be conscious though, because value `initial` sets a property value into the default value specified for `CSS` property, not to the default value for `CSS` property for a given `HTML` tag. For example:
+We should be conscious though, because value `initial` is the default value specified for the `CSS` property, not the default value of the `CSS` property for a given `HTML` tag. For example:
 ```css
 div {
     display: initial;
@@ -65,9 +65,9 @@ Small demo below (uncomment `width: 200px` and see how positioning of some compo
 This will set the positioning context for component's internals. Not only for 2 dimensions (`top`, `bottom`, `left`, `right`) but also 3D positioning, as `z-index` is a number that is interpreted as relative to its stacking context:
 * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
 
-Example of basic setup:
-
 ## Basic setup
+
+Example of basic setup for the component's root element:
 
 ```css
 .Component {
