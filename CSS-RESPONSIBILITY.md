@@ -6,10 +6,12 @@
     * [External layout](CSS-RESPONSIBILITY.md#external-layout)
     * [Internal layout](CSS-RESPONSIBILITY.md#internal-layout)
     * [Setting vs customization](CSS-RESPONSIBILITY.md#setting-vs-customization)
+        * [External-layout properties](CSS-RESPONSIBILITY.md#external-layout-properties)
         * [Position property](CSS-RESPONSIBILITY.md#position-property)
         * [Display property](CSS-RESPONSIBILITY.md#display-property)
         * [Fixed size](CSS-RESPONSIBILITY.md#fixed-size)
         * [Box sizing](CSS-RESPONSIBILITY.md#box-sizing)
+        * [Internal-layout properties](CSS-RESPONSIBILITY.md#internal-layout-properties)
 * [Look](CSS-RESPONSIBILITY.md#look)
     * [Components are not responsible for their look](CSS-RESPONSIBILITY.md#components-are-not-responsible-for-their-look)
 
@@ -21,8 +23,8 @@ It answers the questions: *where?*, *how big?*, *how far from other components?*
 We can see a web document as 3D space where components may be placed.
 
 Layout is usually defined by the following CSS properties:
-- `display`
 - `position`
+- `display`
 - `flex-*`, `align-*`, `order`, `justify-content`
 - `float`, `clear`
 - `left`, `right`, `top`, `bottom`
@@ -30,6 +32,7 @@ Layout is usually defined by the following CSS properties:
 - `width`, `height`, `max-width`, `max-height`, `min-width`, `min-height`
 - `box-sizing`
 - `z-index`
+* `overflow`, `overflow-*`
 
 There can be 2 types of layout CSS:
 - external layout - how the component interracts with siblings and ancestors
@@ -105,7 +108,9 @@ Those two cases however seem to be operations of different access:
 
 It would be nice to decouple those 2 types of access. Would it be possible to determine which CSS properties set on components's root element define external-layout and therefore be **"public"** ? Let's try.
 
-External layout CSS (root element):
+#### External-layout properties
+
+External layout CSS (only the root element):
 * `position` ([see](CSS-RESPONSIBILITY.md#position-property))
 * `display` ([see](CSS-RESPONSIBILITY.md#display-property))
 * `width`, `height` ([see 1](CSS-RESPONSIBILITY.md#fixed-size), [see 2](CSS-RESPONSIBILITY.md#box-sizing))
@@ -138,6 +143,19 @@ It may happen that a component requires a fixed size, or limited size, because o
 #### Box-sizing
 
 With `box-sizing:content-box` which is default, it's impossible to decouple `width`/`height` which define external-layout and `padding`/`border` which are more associated with internal-layout. It would be a good practice to always use `box-sizing:border-box`.
+
+#### Internal-layout properties
+
+Internal-layout `CSS` would include:
+- all layout `CSS` defined for internal elements
+- the following `CSS` properties defined for the root element:
+    - `display` ([see](CSS-RESPONSIBILITY.md#display-property))
+    - `flex-direction`, `flex-wrap`, `flex-flow`, `justify-content`, `align-items`, `align-content`
+    - `border`, `padding`
+    - `max-width`, `max-height`, `min-width`, `min-height`
+    - `box-sizing`
+    - `float`, `clear`
+    - `overflow`, `overflow-*`
 
 ## Look
 
