@@ -106,7 +106,7 @@ Therefore it is critical to establish and define the full API, including `CSS` c
 
 ### Major version
 
-MAJOR version should be considered, whenever any of the following `CSS` part has been MODIFIED or REMOVED:
+MAJOR version should be considered, whenever any of the following `CSS` parts has been MODIFIED or REMOVED:
 - **component** CSS class name or its meaning
 - **element** CSS class name or its meaning
 - **state** CSS class name or its meaning
@@ -127,7 +127,7 @@ also whenever `HTML` template has been MODIFIED causing implicit changes in look
 
 ### Minor version
 
-MINOR version should be considered, whenever any of the following `CSS` part has been ADDED:
+MINOR version should be considered, whenever any of the following `CSS` parts has been ADDED:
 - new **component** with its CSS class name
 - new **element** with its CSS class name
 - new **state** with its CSS class name
