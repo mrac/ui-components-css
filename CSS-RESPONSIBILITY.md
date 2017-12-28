@@ -233,7 +233,7 @@ It would be used in the parent component `MyPerson`:
 .MyPerson-address {}
 ```
 
-The components' look (as part of styling theme `nextgen`) is defined in the application root component `MyApp`:
+And all would be present in the root component `MyApp`:
 
 ```html
 <div className={'MyApp ' + this.props.className}>
@@ -247,14 +247,17 @@ ReactDOM.render(<App className="nextgen" />, document.getElementById('root'));
 ```
 
 ```css
-/* MyApp */
-.MyApp.nextgen {
+.MyApp {
     all: initial;
     display: block;
     position: relative;
     box-sizing: border-box;
 }
+```
 
+The components' look (as part of styling theme `nextgen`) is defined on the level of the application root component `MyApp`:
+
+```css
 /* MyInput */
 .MyApp.nextgen .MyInput {
     font-size: 10px;
