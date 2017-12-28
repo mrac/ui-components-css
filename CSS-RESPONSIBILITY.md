@@ -238,7 +238,7 @@ And all would be present in the root component `MyApp`:
 ```html
 <div className={'MyApp ' + this.props.className}>
     <h1>Enter your name and address</h1>
-    <MyPerson>
+    <MyPerson />
 </div>
 ```
 
